@@ -64,6 +64,14 @@ exports.updateEmployee = (req, res, next) => {
 
   Employee.findByPk(empId)
     .then((employee) => {
+      if(!employee){
+        return res.json({
+          status: false,
+          data: {},
+          statusCode: 400,
+          message: "Employee with the given ID do not exist",
+        });
+      }
       employee.firstname = firstname;
       employee.lastname = lastname;
       employee.email = email;
