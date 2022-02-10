@@ -18,12 +18,16 @@ exports.addEmployees = (req, res, next) => {
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
   const email = req.body.email;
+  const phone = req.body.phone;
+  const role = req.body.role;
   const password = req.body.password;
 
   Employee.create({
     firstname: firstname,
     lastname: lastname,
     email: email,
+    phone: phone,
+    role: role,
     password: password,
   })
     .then((result) => {
@@ -60,6 +64,8 @@ exports.updateEmployee = (req, res, next) => {
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
   const email = req.body.email;
+  const phone = req.body.phone;
+  const role = req.body.role;
   const password = req.body.password;
 
   Employee.findByPk(empId)
