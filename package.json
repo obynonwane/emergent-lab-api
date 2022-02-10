@@ -1,0 +1,61 @@
+{
+  "name": "rental_store_api",
+  "version": "1.0.0",
+  "description": "rental_solution",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 40000",
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "author": "obinna johnson",
+  "license": "MIT",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "aws-sdk": "^2.828.0",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.0.0",
+    "express-mongo-sanitize": "^2.0.2",
+    "faker": "^5.5.3",
+    "helmet": "^4.4.1",
+    "json-circular-stringify": "^1.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lightstep-opentelemetry-launcher-node": "^0.16.0",
+    "log4js": "^6.3.0",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.3.3",
+    "node-cron": "^2.0.3",
+    "node-geocoder": "^3.27.0",
+    "node-json-logger": "0.0.12",
+    "nodemailer": "^6.4.17",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "sequelize": "^6.16.1",
+    "slugify": "^1.4.6",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3",
+    "woodlot": "^3.2.8",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "jest": "^26.6.3",
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
