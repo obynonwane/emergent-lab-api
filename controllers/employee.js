@@ -1,7 +1,7 @@
 const Employee = require("../models/Employee");
 
 exports.getAllEmployees = (req, res, next) => {
-  Employee.findAll()
+  Employee.findAll({ attributes: { exclude: ["password", "createdAt", "updatedAt"] } })
     .then((result) => {
       return res.json({
         data: result,
@@ -70,7 +70,7 @@ exports.updateEmployee = (req, res, next) => {
 
   Employee.findByPk(empId)
     .then((employee) => {
-      if(!employee){
+      if (!employee) {
         return res.json({
           status: false,
           data: {},
@@ -101,7 +101,7 @@ exports.deleteEmployeeById = (req, res, next) => {
   const empId = req.params.id;
   Employee.findByPk(empId)
     .then((product) => {
-      if(!product){
+      if (!product) {
         return res.json({
           status: false,
           data: {},
