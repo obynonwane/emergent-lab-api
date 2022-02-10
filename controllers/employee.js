@@ -87,6 +87,14 @@ exports.deleteEmployeeById = (req, res, next) => {
   const empId = req.params.id;
   Employee.findByPk(empId)
     .then((product) => {
+      if(!product){
+        return res.json({
+          status: false,
+          data: {},
+          statusCode: 400,
+          message: "Employee with the given ID does not exist",
+        });
+      }
       return product.destroy();
     })
     .then((result) => {
