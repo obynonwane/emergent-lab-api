@@ -65,8 +65,7 @@ exports.updateEmployee = (req, res, next) => {
   const lastname = req.body.lastname;
   const email = req.body.email;
   const phone = req.body.phone;
-  const role = req.body.role;
-  const password = req.body.password;
+
 
   Employee.findByPk(empId)
     .then((employee) => {
@@ -81,7 +80,7 @@ exports.updateEmployee = (req, res, next) => {
       employee.firstname = firstname;
       employee.lastname = lastname;
       employee.email = email;
-      employee.password = password;
+      employee.phone = phone;
       return employee.save();
     })
     .then((result) => {
